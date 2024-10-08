@@ -18,7 +18,7 @@ export default function LandingPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [activeForm, setActiveForm] = useState(null)
-  const formRef = useRef(null)
+  const formRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
