@@ -17,7 +17,7 @@ export default function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [activeForm, setActiveForm] = useState(null)
+  const [activeForm, setActiveForm] = useState<string | null>(null)
   const formRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -76,9 +76,9 @@ export default function LandingPage() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
   }
 
-const toggleForm = (formType: null) => {
-  setActiveForm(activeForm === formType ? null : formType);
-};
+  const toggleForm = (formType: string | null) => {
+    setActiveForm(activeForm === formType ? null : formType);
+  };
 
   const renderHouseForm = () => (
     <form className="space-y-6">
@@ -309,7 +309,7 @@ const toggleForm = (formType: null) => {
             <Input type="file" id="floorPlan" />
           </div>
           <div>
-            <Label htmlFor="buildingCertificate">Świadectwo całego budynku (opcjonalne)</Label>
+            <Label  htmlFor="buildingCertificate">Świadectwo całego budynku (opcjonalne)</Label>
             <Input type="file" id="buildingCertificate" />
           </div>
         </div>
@@ -650,7 +650,7 @@ const toggleForm = (formType: null) => {
           </div>
           <div>
             <Label htmlFor="roomHeight">Wysokość pomieszczeń w cm</Label>
-            <Input type="number"  id="roomHeight" />
+            <Input type="number"  id="room Height" />
           </div>
           <div>
             <Label htmlFor="externalWalls">Liczba ścian zewnętrznych</Label>
