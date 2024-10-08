@@ -76,7 +76,7 @@ export default function LandingPage() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
   }
 
-const toggleForm = (formType: string) => {
+const toggleForm = (formType: null) => {
   setActiveForm(activeForm === formType ? null : formType);
 };
 
