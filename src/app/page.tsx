@@ -76,9 +76,9 @@ export default function LandingPage() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
   }
 
-  const toggleForm = (formType) => {
-    setActiveForm(activeForm === formType ? null : formType)
-  }
+const toggleForm = (formType: string) => {
+  setActiveForm(activeForm === formType ? null : formType);
+};
 
   const renderHouseForm = () => (
     <form className="space-y-6">
